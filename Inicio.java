@@ -6,8 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Eduardo Javier Córdova Serrano) 
  * @version (Martes 21 de Abril del 2020)
  */
-public class Inicio extends World
-{
+public class Inicio extends World{
 
     /**
      * Constructor for objects of class Inicio.
