@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Inicio here.
  * Pantalla principal del videojuego
- * @author (Eduardo Javier Córdova Serrano) 
+ * @author (Eduardo Javier Córdova Serrano and Barrera Sánchez Emmanuel Aczayacat)
  * @version (Martes 21 de Abril del 2020)
  */
 public class Inicio extends World{

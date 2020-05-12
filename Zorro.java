@@ -11,6 +11,7 @@ public class Zorro extends Actor
 
     private int frameStill;
     private int contadorFrames;
+    
     public Zorro(){
         imagGreen = new GreenfootImage("ZorroWalk/zorroStillL.png");
         contadorFrames=0;
