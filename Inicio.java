@@ -18,7 +18,9 @@ public class Inicio extends World{
         super(1000, 800, 1); 
         prepare();
         Zorro zorro = new Zorro();
+        Start botonStart = new Start();
         addObject(zorro,50,200);
+        addObject(botonStart,520,350);
     }
 
     /**
