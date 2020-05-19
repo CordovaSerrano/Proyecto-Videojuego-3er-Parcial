@@ -7,43 +7,21 @@ public class Zorro extends Actor
     private int xDirection=1;   //Variable usada para indicar la direccios de los frames
     private int velocity = 9;
     private String key;
-    public GreenfootImage imagGreen;
+    private FrameContainer frameContainer;
 
-    private int frameStill;
-    private int contadorFrames;
     
     public Zorro(){
-        imagGreen = new GreenfootImage("ZorroWalk/zorroStillL.png");
-        contadorFrames=0;
-        frameStill = 1;
+        frameContainer = new FrameContainer();
     }
+    
     public void act()
     {
-        // Add your action code here.
-        /*Animation control*/
-        //facing = 0;
-
-        /*int x = getX(); //funciona tambien con: this.getX o super.getX()
-        int y = getY();
-        setLocation(x + velocity * xDirection,y);
-        if(isAtEdge()){
-            xDirection *= -1;
-            setRotation(360);
-        }*/
         control();
-        if(xDirection==1)animacion(framesWalkDer);
-        else animacion(framesWalkIzq);
-    }
-
-    public void animacion(String[] frames){
-        if(frameStill == 0){
-            if(contadorFrames>=frames.length){
-                contadorFrames=1;
-            }
-            setImage(frames[contadorFrames]);
-            contadorFrames++;
+        if(xDirection==1) {
+            frameContainer.animacion(framesWalkDer, this);
+        } else {
+            frameContainer.animacion(framesWalkIzq, this);
         }
-        if(frameStill == 1){setImage(frames[0]);}
     }
 
     public void control(){
@@ -66,10 +44,12 @@ public class Zorro extends Actor
             y = y + velocity;
         }
         /*--- Controles de frameStill ---*/
-        if(key==null && (Greenfoot.isKeyDown("A")||Greenfoot.isKeyDown("D")||Greenfoot.isKeyDown("W")||Greenfoot.isKeyDown("S"))){
-            frameStill=0;
+        if(key==null && (Greenfoot.isKeyDown("A") || Greenfoot.isKeyDown("D") || Greenfoot.isKeyDown("W") || Greenfoot.isKeyDown("S"))){
+            frameContainer.setFrameStill(0);
+        } else {
+            frameContainer.setFrameStill(1);
         }
-        else{frameStill=1;}
+        
         setLocation(x,y);
 
     }
