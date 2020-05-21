@@ -4,8 +4,14 @@ comment1.params=
 comment1.target=Zorro()
 comment2.params=
 comment2.target=void\ act()
+<<<<<<< HEAD
 comment3.params=frames
 comment3.target=void\ animacion(java.lang.String[])
 comment4.params=
 comment4.target=void\ control()
 numComments=5
+=======
+comment3.params=
+comment3.target=void\ control()
+numComments=4
+>>>>>>> origin/master
