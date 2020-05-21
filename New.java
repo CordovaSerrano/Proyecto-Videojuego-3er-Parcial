@@ -6,9 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class New extends Actor
+public class BotonNew extends Actor
 {
-    public New(){
+    public BotonNew(){
     }
     /**
      * Act - do whatever the NEW wants to do. This method is called whenever

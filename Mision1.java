@@ -21,7 +21,7 @@ public class Mision1 extends World
         Zorro zorro = new Zorro();
         Gallina gallina = new Gallina();
         
-        addObject(zorro,500,500);
+        addObject(zorro,500,510);
         addObject(gallina,300,500);
     }
 }

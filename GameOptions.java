@@ -18,8 +18,8 @@ public class GameOptions extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
    
-        New botonNew = new New();
-        Load botonLoad = new Load();
+        New botonNew = new BotonNew();
+        Load botonLoad = new BotonLoad();
         addObject(botonNew,520,350);
         addObject(botonLoad,520,490);
     }

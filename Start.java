@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Eduardo Javier Córdova Serrano) 
  * @version (11 de Mayo del 2020)
  */
-public class Start extends Actor
+public class BotonStart extends Actor
 {   
     public Start(){
         

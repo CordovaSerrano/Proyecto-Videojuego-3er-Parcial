@@ -18,7 +18,7 @@ public class Inicio extends World{
         super(1000, 800, 1); 
         prepare();
         Start botonStart = new Start();
-        addObject(botonStart,520,420);
+        addObject(botonStart,520,419);
     }
 
     /**

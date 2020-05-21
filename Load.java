@@ -6,9 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Load extends Actor
+public class BotonLoad extends Actor
 {
-     public Load(){
+     public BotonLoad(){
          
     }
     /**

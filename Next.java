@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Next extends Actor
+public class BotonNext extends Actor
 {
     /**
      * Act - do whatever the Next wants to do. This method is called whenever
