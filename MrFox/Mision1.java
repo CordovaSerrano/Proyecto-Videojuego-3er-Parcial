@@ -19,12 +19,10 @@ public class Mision1 extends World
     {   
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1);
+        String name ="files\\coordenadas_arboles.txt";
+        ArrayList coordenadas = new ArrayList();
         
-        int i=0;
-        int x=500;
-        int y=400;
-        
-        File spawnTree = new File("files\\coordenadas_arboles.txt");
+        File spawnTree = new File(name);
         archivos a = new archivos();
         
         
@@ -38,6 +36,15 @@ public class Mision1 extends World
         System.out.println(spawnTree.exists());
         System.out.println(a.leerTxt("files\\coordenadas_arboles.txt"));
         
+        spawnTrees(name);
+        coordenadas = a.coordenadas(name);   
+    }
+    
+    public void spawnTrees(String name){   
+        
+        
+        
         
     }
 }
+
