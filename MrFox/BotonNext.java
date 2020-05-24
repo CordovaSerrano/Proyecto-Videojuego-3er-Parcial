@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BotonNext extends Actor
+public class BotonNext extends Boton
 {
     /**
      * Act - do whatever the BotonNext wants to do. This method is called whenever
@@ -15,7 +15,9 @@ public class BotonNext extends Actor
     public void act() 
     {
         // Add your action code here.
-        if (Greenfoot.mousePressed(this)){
+        checkMouse();
+       
+        if (Greenfoot.mouseClicked(this)){
              Greenfoot.setWorld(new Mision1());
         } 
     }

@@ -8,7 +8,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mision1 extends World
+public class Mision1 extends Misiones
 {
     private ArrayList<Double> coordenadas;
     /**
@@ -16,9 +16,7 @@ public class Mision1 extends World
      * 
      */
     public Mision1()
-    {   
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1);
+    {  
         String name ="files\\coordenadas_arboles.txt";
         ArrayList coordenadas = new ArrayList();
         
@@ -31,20 +29,21 @@ public class Mision1 extends World
         
         addObject(zorro,500,510);
         addObject(gallina,300,500);
-        
-        System.out.println(spawnTree.getAbsolutePath());
-        System.out.println(spawnTree.exists());
-        System.out.println(a.leerTxt("files\\coordenadas_arboles.txt"));
-        
-        spawnTrees(name);
-        coordenadas = a.coordenadas(name);   
+         /*---Madrigeras---*/
+        Madrigera m1 = new Madrigera();
+        addObject(m1,200,510);
+        spawnTrees();
     }
     
-    public void spawnTrees(String name){   
-        
-        
-        
-        
+    public void spawnTrees(){
+        //Coordenadas de los arboles
+        int x[]= {35,140,820,552,262,490,950,880,562,54,64,430};
+        int y[]= {50,300,400,618,658,526,270,95,232,570,742,481};
+      
+        for(int i=0; i<12;i++){
+            addObject(new Arbol(),x[i],y[i]);
+        }
+       
     }
 }
 

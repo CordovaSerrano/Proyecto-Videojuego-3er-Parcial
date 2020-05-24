@@ -22,13 +22,18 @@ public class Zorro extends Actor{
     public void act()
     {
         control();
+        animacionConFrameContainer();
+        cazar();
+    }
+
+    public void animacionConFrameContainer(){
         if(xDirection==1) {
             frameContainer.animacion(framesWalkDer, this);
         } else {
             frameContainer.animacion(framesWalkIzq, this);
         }
     }
-
+    
     public void control(){
         key = Greenfoot.getKey();
         int x = getX();
@@ -58,6 +63,17 @@ public class Zorro extends Actor{
         setLocation(x,y);
 
     }
+    
+    public void cazar(){
+        Actor Conejo;
+        Conejo = getOneObjectAtOffset(0,0,Conejo.class);
+        if(Conejo != null && Greenfoot.isKeyDown("Space")){
+            World detect;
+            detect = getWorld();
+            detect.removeObject(Conejo);
+        }
+    }
+    
    public boolean canMoveLeft(){
        boolean canMove =  true;
        

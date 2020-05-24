@@ -4,48 +4,29 @@ import java.lang.*;
 
 public class archivos {
 
-    public String leerTxt(String address) //direccion del archivo
-    {
-        String texto = "";
-        String dato = "";
+    public int[][] readFile(String nameFile){
+        int[][] coordenadas;
+        coordenadas = new int[12][12];
         
+        Scanner archivo = null;
         try{
-            BufferedReader bf = new BufferedReader(new FileReader(address));
-            String temp = "";
-            String bfRead;
-            while((bfRead = bf.readLine()) != null){
-                //Haz el ciclo mientras bfRead tenga datos
-                temp = temp + bfRead; //texto del archivo guardado (concatenando)
+        archivo = new Scanner(new File(nameFile));
+        }
+        catch(Exception e){
+            System.err.println("Archivo no encontrado");
+        }
+        int num=0, i, j;
+        while(archivo.hasNext()){
+            
+            for(i=0; i<12;i++){
+                for(j=0;j<2;j++){
+                    num = archivo.nextInt(); //El valor tipo string es convertido a entero
+                    System.out.println("Valor entero: "+num);
+                    coordenadas[i][j] = num;
+                    System.out.println("["+i+"]["+j+"] ="+coordenadas[i][j]);
+                }
             }
-            texto = temp;
-        }catch (Exception e){
-            System.err.println("FILE NOT FOUND");
         }
-        return texto;
-    }
-    
-    public ArrayList coordenadas(String name){
-        File archivo = null;
-        FileReader fr = null;
-        ArrayList lineas = new ArrayList();
-        try {
-        archivo = new File (name);
-        String linea;
-        fr = new FileReader (archivo);
-        BufferedReader br = new BufferedReader(fr);
-        while((linea=br.readLine())!=null){
-        lineas.add(linea);
-        }
-        System.out.print ("Coordenadas de Arboles: \n"); //MOSTRAR LOS DATOS DEL ARREGLO
-        for (int j = 0 ; j < lineas.size() ; j++){
-        linea = (String)lineas.get(j);
-        System.out.print ( linea + "\n" );
-        }
-        }//FIN DEL TRY
-        catch(IOException e){
-        System.out.println(e);
-        }
-        
-        return lineas;
+        return coordenadas;
     }
 }

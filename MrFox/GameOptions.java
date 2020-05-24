@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameOptions extends World
+public class GameOptions extends Menu
 {
 
     /**
@@ -15,12 +15,7 @@ public class GameOptions extends World
      */
     public GameOptions()
     {    
-        super(1000, 800, 1); 
-   
-        BotonNew botonNew = new BotonNew();
-        BotonLoad botonLoad = new BotonLoad();
-        addObject(botonNew,520,350);
-        addObject(botonLoad,520,490);
-        
+        addObject(new BotonNew(),520,350);
+        addObject(new BotonLoad(),520,490);
     }
 }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class NewGame extends World
+public class NewGame extends Menu
 {
 
     /**
@@ -14,12 +14,7 @@ public class NewGame extends World
      * 
      */
     public NewGame()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1); 
-        
-        BotonNext siguiente = new BotonNext();
-        
-        addObject(siguiente,820,620);
+    {
+        addObject(new BotonNext(),820,620);
     }
 }

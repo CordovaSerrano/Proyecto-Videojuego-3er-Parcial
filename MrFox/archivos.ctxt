@@ -1,7 +1,5 @@
 #BlueJ class context
 comment0.target=archivos
-comment1.params=address
-comment1.target=java.lang.String\ leerTxt(java.lang.String)
-comment2.params=name
-comment2.target=java.util.ArrayList\ coordenadas(java.lang.String)
-numComments=3
+comment1.params=nameFile
+comment1.target=int[][]\ readFile(java.lang.String)
+numComments=2
