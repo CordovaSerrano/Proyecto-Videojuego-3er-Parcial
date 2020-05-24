@@ -32,6 +32,10 @@ public class Mision1 extends World
         addObject(zorro,500,510);
         addObject(gallina,300,500);
         
+        /*---Madrigeras---*/
+        Madrigera m1 = new Madrigera();
+        addObject(m1,200,510);
+        
         System.out.println(spawnTree.getAbsolutePath());
         System.out.println(spawnTree.exists());
         System.out.println(a.leerTxt("files\\coordenadas_arboles.txt"));

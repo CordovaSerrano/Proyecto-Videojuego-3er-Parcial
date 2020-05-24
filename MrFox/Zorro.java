@@ -67,7 +67,7 @@ public class Zorro extends Actor{
     public void cazar(){
         Actor Conejo;
         Conejo = getOneObjectAtOffset(0,0,Conejo.class);
-        if(Conejo != null){
+        if(Conejo != null && Greenfoot.isKeyDown("Space")){
             World detect;
             detect = getWorld();
             detect.removeObject(Conejo);

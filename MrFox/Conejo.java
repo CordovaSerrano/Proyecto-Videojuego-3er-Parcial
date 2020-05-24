@@ -1,11 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
-/**
- * Write a description of class Conejo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Conejo extends Actor
 {
     private String[] framesWalkDer = {"ConejoWalk/conejoWalk1R.png","ConejoWalk/conejoWalk2R.png","ConejoWalk/conejoWalk3R.png","ConejoWalk/conejoWalk4R.png","ConejoWalk/conejoWalk5R.png"};
