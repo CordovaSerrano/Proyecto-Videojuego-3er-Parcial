@@ -114,13 +114,21 @@ public class Zorro extends Actor{
    
    public boolean canMoveTop(){
        boolean canMove = true;
+       Arbol arbol;
        
        int imageWidth = getImage().getWidth();
        int imageHeight = getImage().getHeight();
                                          // x  y              // Pixeles Cerca del objeto //
-       if(getOneObjectAtOffset(imageWidth, imageHeight / -2, Actor.class) != null || 
-          getOneObjectAtOffset(- imageWidth, imageHeight / -2, Actor.class) != null)
+
+       if((arbol = (Arbol)getOneObjectAtOffset(imageWidth / 2, imageHeight / -2, Arbol.class)) != null){
+          arbol.setIsFoxTouching(true);
           canMove = false;
+        }
+                                         
+       if((arbol = (Arbol)getOneObjectAtOffset(imageWidth / -2, imageHeight / -2, Arbol.class)) != null){
+          arbol.setIsFoxTouching(true);
+          canMove = false;
+        }
           
        return canMove;
    }
