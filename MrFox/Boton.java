@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boton extends Actor
 {
+    private GreenfootSound clickSound = new GreenfootSound("ClickSound.mp3");
+    private int mouseOverSound = 0;
     private boolean mouseOver = false;
     private static int MAX_TRANS = 255;
     

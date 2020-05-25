@@ -14,9 +14,11 @@ public class Zorro extends Actor{
     private String key;
     private FrameContainer frameContainer;
 
+    private Arbusto arbusto;
     
     public Zorro(){
         frameContainer = new FrameContainer();
+        arbusto = new Arbusto();
     }
     
     public void act()
@@ -64,10 +66,21 @@ public class Zorro extends Actor{
 
     }
     
+    public boolean zorroEscondido(){
+        //Actor arbusto = getOneObjectAtOffset(Arbusto.class);
+        if(arbusto != null && Greenfoot.isKeyDown("J")){
+            return true;
+        }else{
+            return false;
+        }
+        //return true;
+    }
+    
     public void cazar(){
         Actor Conejo;
         Conejo = getOneObjectAtOffset(0,0,Conejo.class);
-        if(Conejo != null && Greenfoot.isKeyDown("Space")){
+
+        if(Conejo != null && Greenfoot.isKeyDown("K")){
             World detect;
             detect = getWorld();
             detect.removeObject(Conejo);
@@ -105,8 +118,8 @@ public class Zorro extends Actor{
        int imageWidth = getImage().getWidth();
        int imageHeight = getImage().getHeight();
                                          // x  y              // Pixeles Cerca del objeto //
-       if(getOneObjectAtOffset(imageWidth / - 2 + 3, imageHeight / -2, Arbol.class) != null || 
-          getOneObjectAtOffset(imageWidth / - 2 + 3, imageHeight / 2, Arbol.class) != null)
+       if(getOneObjectAtOffset(imageWidth, imageHeight / -2, Actor.class) != null || 
+          getOneObjectAtOffset(- imageWidth, imageHeight / -2, Actor.class) != null)
           canMove = false;
           
        return canMove;

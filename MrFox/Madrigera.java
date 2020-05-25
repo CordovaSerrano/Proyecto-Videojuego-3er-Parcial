@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Madrigera extends Actor
+public class Madrigera extends Entorno
 {
     private boolean conejosEnMadrigera=true;
     

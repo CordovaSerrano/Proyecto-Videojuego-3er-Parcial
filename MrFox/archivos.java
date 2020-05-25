@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-public class archivos {
+public class Archivos {
 
     public int[][] readFile(String nameFile){
         int[][] coordenadas;

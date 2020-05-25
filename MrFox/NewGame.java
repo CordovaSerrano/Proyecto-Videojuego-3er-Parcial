@@ -15,6 +15,8 @@ public class NewGame extends Menu
      */
     public NewGame()
     {
+        
         addObject(new BotonNext(),820,620);
+        
     }
 }

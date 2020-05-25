@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.target=archivos
+comment0.target=Archivos
 comment1.params=nameFile
 comment1.target=int[][]\ readFile(java.lang.String)
 numComments=2

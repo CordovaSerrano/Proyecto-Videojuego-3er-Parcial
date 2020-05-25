@@ -10,6 +10,7 @@ import java.util.*;
  */
 public class Mision1 extends Misiones
 {
+    private GreenfootSound music = new GreenfootSound("Forest.mp3");
     private ArrayList<Double> coordenadas;
     /**
      * Constructor for objects of class Mision1.
@@ -17,21 +18,25 @@ public class Mision1 extends Misiones
      */
     public Mision1()
     {  
+        //music.play();
         String name ="files\\coordenadas_arboles.txt";
-        ArrayList coordenadas = new ArrayList();
-        
-        File spawnTree = new File(name);
-        archivos a = new archivos();
-        
-        
+        //Creacion del HUD//
+        HUD hud = new HUD(3,3);
+        addObject(hud,500,700);
+        //Creacion de Personajes//
         Zorro zorro = new Zorro();
         Gallina gallina = new Gallina();
+        //Perro perro = new Perro();
         
         addObject(zorro,500,510);
         addObject(gallina,300,500);
-         /*---Madrigeras---*/
+        //addObject(perro,100,200);
+        //Creacion de Entorno//
         Madrigera m1 = new Madrigera();
+        Arbusto a1 = new Arbusto();
+        
         addObject(m1,200,510);
+        addObject(a1,200,600);
         spawnTrees();
     }
     

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Arbol extends Actor
+public class Arbol extends Entorno
 {
     /**
      * Act - do whatever the Arbol wants to do. This method is called whenever

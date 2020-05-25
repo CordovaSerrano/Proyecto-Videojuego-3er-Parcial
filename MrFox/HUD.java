@@ -1,29 +1,30 @@
-import java.util.List;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class HUD {
-    private List<String> HUD;
+/**
+ * Write a description of class HUD here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class HUD extends Actor
+{
     private int vida;
     private int comida;
-
-    public HUD(){
-        HUD.add("0/3");
-        HUD.add("1/3");
-        HUD.add("2/3");
-        HUD.add("3/3");
-        HUD.add("0/2");
-        HUD.add("1/2");
-        HUD.add("2/2");
-        HUD.add("3/2");
-        HUD.add("0/1");
-        HUD.add("1/1");
-        HUD.add("2/1");
-        HUD.add("3/1");
+    /**
+     * Act - do whatever the HUD wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public HUD(int vida,int comida){
+        this.vida = vida;
+        this.comida = comida;
     }
-
-    public int calculoCarneYVida(int vida, int comida){
-        int resultado;
-        int HUDSize = HUD.size()/3;
-        resultado = (vida * HUDSize + comida) - 1;
-        return resultado;
+    public void act() 
+    {
+        // Add your action code here.
+        
+    }
+    
+    public void hudStatus(){
+        
     }
 }

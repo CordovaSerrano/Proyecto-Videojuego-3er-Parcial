@@ -14,8 +14,10 @@ public class GameOptions extends Menu
      * 
      */
     public GameOptions()
-    {    
+    {   
+        
         addObject(new BotonNew(),520,350);
         addObject(new BotonLoad(),520,490);
+        
     }
 }
