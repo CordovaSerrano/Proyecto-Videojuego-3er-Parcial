@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Exit extends Boton
 {
+    private SoundManager sound = SoundManager.getSoundManager();
     /**
      * Act - do whatever the Exit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,7 +18,8 @@ public class Exit extends Boton
         // Add your action code here.
         checkMouse();
         if (Greenfoot.mouseClicked(this)){
-             clickSound();    
+             clickSound();
+             sound.stopMusicM1();
              Greenfoot.setWorld(new StartMenu());
             }
     }    

@@ -15,7 +15,9 @@ public class Mision1 extends Misiones{
      */
     public Mision1()
     {   
-        String name ="files\\coordenadas_arboles.txt";
+        SoundManager sound = SoundManager.getSoundManager();
+        sound.stopIntro();
+        sound.playMusicM1();
         //Creacion de Personajes//
         Zorro zorro = new Zorro();
         Gallina gallina = new Gallina();

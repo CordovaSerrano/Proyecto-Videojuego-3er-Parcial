@@ -7,6 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Zorro extends Actor{
+    private GreenfootSound walk = new GreenfootSound("Walk.mp3");
     private String[] framesWalkDer = {"ZorroWalk/zorroStillR.png","ZorroWalk/zorro1R.png","ZorroWalk/zorro2R.png","ZorroWalk/zorro3R.png","ZorroWalk/zorro4R.png","ZorroWalk/zorro5R.png"};
     private String[] framesWalkIzq = {"ZorroWalk/zorroStillL.png","ZorroWalk/zorro1L.png","ZorroWalk/zorro2L.png","ZorroWalk/zorro3L.png","ZorroWalk/zorro4L.png","ZorroWalk/zorro5L.png"};
     private int xDirection=1;   //Variable usada para indicar la direccios de los frames
@@ -40,20 +41,25 @@ public class Zorro extends Actor{
         key = Greenfoot.getKey();
         int x = getX();
         int y = getY();
+        walk.setVolume(40);
         /*--- Controles de Direccion ---*/
         if(Greenfoot.isKeyDown("A") && canMoveLeft()){
             xDirection = -1;
             x = x - velocity;
+            walk.play();
         }
         if(Greenfoot.isKeyDown("D") && canMoveRight()){
             xDirection = 1;
             x = x + velocity;
+            walk.play();
         }
         if(Greenfoot.isKeyDown("W") && canMoveTop()){
             y = y - velocity;
+            walk.play();
         }
         if(Greenfoot.isKeyDown("S") && canMoveBot() ){
             y = y + velocity;
+            walk.play();
         }
         /*--- Controles de frameStill ---*/
         if(key==null && (Greenfoot.isKeyDown("A") || Greenfoot.isKeyDown("D") || Greenfoot.isKeyDown("W") || Greenfoot.isKeyDown("S"))){

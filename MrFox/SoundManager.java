@@ -6,16 +6,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SoundManager
-{
-    public GreenfootSound intro = new GreenfootSound("Intro.mp3"); // Musica para la intro
-    private GreenfootSound musicM1 = new GreenfootSound("Forest.mp3");  //Musica para la mision1
+public class SoundManager{
+    private static SoundManager soundManager;
     
+    public GreenfootSound intro = new GreenfootSound("Intro.mp3"); // Musica para la intro
+    private GreenfootSound musicM1 = new GreenfootSound("Mision1.mp3");  //Musica para la mision1
+    
+    private SoundManager(){
+        
+    }
+    
+    public static SoundManager getSoundManager(){
+        if(soundManager == null){
+            soundManager = new SoundManager();
+        }
+        return soundManager;
+    }
     
     public void playIntro(){
         intro.setVolume(25);
-        intro.play();
-        
+        intro.play();   
     }
     
     public void stopIntro(){
@@ -23,6 +33,7 @@ public class SoundManager
     }
     
     public void playMusicM1(){
+        musicM1.setVolume(25);
         musicM1.play();
     }
     

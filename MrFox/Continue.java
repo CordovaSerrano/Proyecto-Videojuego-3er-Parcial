@@ -18,7 +18,7 @@ public class Continue extends Boton
         checkMouse();
         if (Greenfoot.mouseClicked(this)){
              clickSound();    
-             
+             Greenfoot.start();
         }
     }    
 }

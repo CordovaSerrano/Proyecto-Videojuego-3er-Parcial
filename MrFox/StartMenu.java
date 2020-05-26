@@ -16,6 +16,8 @@ public class StartMenu extends Menu
      */
     public StartMenu()
     {   
+        SoundManager sound = SoundManager.getSoundManager();
+        //sound.playIntro();
         Greenfoot.delay(190);
         prepare();
         
