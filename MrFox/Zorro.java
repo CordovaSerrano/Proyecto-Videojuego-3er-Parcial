@@ -61,9 +61,7 @@ public class Zorro extends Actor{
         } else {
             frameContainer.setFrameStill(1);
         }
-        
         setLocation(x,y);
-
     }
     
     public boolean zorroEscondido(){
@@ -93,8 +91,8 @@ public class Zorro extends Actor{
        int imageWidth = getImage().getWidth();
        int imageHeight = getImage().getHeight();
                                           // x  y             // Pixeles Cerca del objeto //
-       if(getOneObjectAtOffset(imageWidth / -2 -3, imageHeight / -2, Arbol.class) != null || 
-          getOneObjectAtOffset(imageWidth / -2 -3, imageHeight / 2, Arbol.class) != null)
+       if(getOneObjectAtOffset(imageWidth / -2 , imageHeight / -2, Arbol.class) != null || 
+          getOneObjectAtOffset(imageWidth / -2 , imageHeight / 2, Arbol.class) != null)
           canMove = false;
           
        return canMove;
@@ -105,8 +103,8 @@ public class Zorro extends Actor{
        int imageWidth = getImage().getWidth();
        int imageHeight = getImage().getHeight();
                                          // x  y              // Pixeles Cerca del objeto //
-       if(getOneObjectAtOffset(imageWidth / 2 + 3, imageHeight / -2, Arbol.class) != null || 
-          getOneObjectAtOffset(imageWidth / 2 + 3, imageHeight / 2, Arbol.class) != null)
+       if(getOneObjectAtOffset(imageWidth / 2 , imageHeight / -2, Arbol.class) != null || 
+          getOneObjectAtOffset(imageWidth / 2 , imageHeight / 2, Arbol.class) != null)
           canMove = false;
           
        return canMove;
@@ -118,29 +116,27 @@ public class Zorro extends Actor{
        
        int imageWidth = getImage().getWidth();
        int imageHeight = getImage().getHeight();
-                                         // x  y              // Pixeles Cerca del objeto //
-
-       if((arbol = (Arbol)getOneObjectAtOffset(imageWidth / 2, imageHeight / -2, Arbol.class)) != null){
-          arbol.setIsFoxTouching(true);
-          canMove = false;
-        }
-                                         
-       if((arbol = (Arbol)getOneObjectAtOffset(imageWidth / -2, imageHeight / -2, Arbol.class)) != null){
-          arbol.setIsFoxTouching(true);
+       
+       if(getOneObjectAtOffset(-imageWidth / 4, imageHeight / -2, Arbol.class) != null || 
+          getOneObjectAtOffset(imageWidth / 4, imageHeight / -2, Arbol.class) != null ||
+          getOneObjectAtOffset(0, imageHeight / -2, Arbol.class) != null){
           canMove = false;
         }
           
        return canMove;
    }
    public boolean canMoveBot(){
-       boolean canMove = true;
+      boolean canMove = true;
+       Arbol arbol;
        
        int imageWidth = getImage().getWidth();
        int imageHeight = getImage().getHeight();
-                                         // x  y              // Pixeles Cerca del objeto //
-       if(getOneObjectAtOffset(imageWidth /  2 - 3, imageHeight / -2, Arbol.class) != null || 
-          getOneObjectAtOffset(imageWidth /  2 - 3, imageHeight / 2, Arbol.class) != null)
+       
+       if(getOneObjectAtOffset(-imageWidth / 4, imageHeight / 2, Arbol.class) != null || 
+          getOneObjectAtOffset(imageWidth / 4, imageHeight / 2, Arbol.class) != null ||
+          getOneObjectAtOffset(0, imageHeight / 2, Arbol.class) != null){
           canMove = false;
+        }
           
        return canMove;
    }

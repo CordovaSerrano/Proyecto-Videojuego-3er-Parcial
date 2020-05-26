@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Menu here.
  * 
@@ -8,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartMenu extends Menu
 {   
-    public GreenfootSound theme = new GreenfootSound("Intro.mp3");
+    
     private Boton next = new BotonNext();
     
     /**
@@ -17,21 +16,12 @@ public class StartMenu extends Menu
      */
     public StartMenu()
     {   
-        play();
-        
         Greenfoot.delay(190);
         prepare();
         
         addObject(new BotonStart(),520,420);
     }
-    public void play(){
-        theme.setVolume(25);
-        //theme.play();
-        
-    }
-    public void stop(){
-        theme.stop();
-    }
+    
     private void prepare()
     {
     }

@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BotonLoad extends Boton
 {
-    private GreenfootSound clickSound = new GreenfootSound("ClickSound.mp3");
     /**
      * Act - do whatever the BotonLoad wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,7 +19,7 @@ public class BotonLoad extends Boton
         checkMouse();
         
         if (Greenfoot.mouseClicked(this)){
-             clickSound.play();
+             clickSound();   
              Greenfoot.setWorld(new GameSaved());
             }
     }    

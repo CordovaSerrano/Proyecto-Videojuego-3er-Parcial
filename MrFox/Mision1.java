@@ -8,21 +8,14 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mision1 extends Misiones
-{
-    private GreenfootSound music = new GreenfootSound("Forest.mp3");
-    private ArrayList<Double> coordenadas;
+public class Mision1 extends Misiones{
     /**
      * Constructor for objects of class Mision1.
      * 
      */
     public Mision1()
-    {  
-        //music.play();
+    {   
         String name ="files\\coordenadas_arboles.txt";
-        //Creacion del HUD//
-        HUD hud = new HUD(3,3);
-        addObject(hud,500,700);
         //Creacion de Personajes//
         Zorro zorro = new Zorro();
         Gallina gallina = new Gallina();
@@ -38,8 +31,18 @@ public class Mision1 extends Misiones
         addObject(m1,200,510);
         addObject(a1,200,600);
         spawnTrees();
+        //Creacion del HUD//
+        HUD hud = new HUD(3,3);
+        addObject(hud,520,750);
     }
     
+    public void act(){
+        if(Greenfoot.isKeyDown("P")){
+            menuPause();
+        }
+     
+    }
+   
     public void spawnTrees(){
         //Coordenadas de los arboles
         int x[]= {35,140,820,552,262,490,950,880,562,54,64,430};
@@ -49,6 +52,13 @@ public class Mision1 extends Misiones
             addObject(new Arbol(),x[i],y[i]);
         }
        
+    }
+    public void menuPause(){
+            addObject(new Pause(),530,400);
+            addObject(new Continue(),530,290);
+            addObject(new Options(),530,360);
+            addObject(new SaveGame(),530,430);
+            addObject(new Exit(),530,500);
     }
 }
 

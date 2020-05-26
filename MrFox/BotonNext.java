@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BotonNext extends Boton
 {
-    private GreenfootSound clickSound = new GreenfootSound("ClickSound.mp3");
     /**
      * Act - do whatever the BotonNext wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,7 +19,7 @@ public class BotonNext extends Boton
         
         
         if (Greenfoot.mouseClicked(this)){
-             clickSound.play();
+             clickSound();   
              Greenfoot.setWorld(new Mision1());
         } 
     }

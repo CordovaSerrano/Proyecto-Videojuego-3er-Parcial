@@ -1,25 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BotonStart here.
+ * Write a description of class Exit here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BotonStart extends Boton
+public class Exit extends Boton
 {
     /**
-     * Act - do whatever the BotonStart wants to do. This method is called whenever
+     * Act - do whatever the Exit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
         checkMouse();
-        
         if (Greenfoot.mouseClicked(this)){
-             clickSound();   
-             Greenfoot.setWorld(new GameOptions());
+             clickSound();    
+             Greenfoot.setWorld(new StartMenu());
             }
     }    
 }
