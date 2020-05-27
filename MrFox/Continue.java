@@ -17,8 +17,20 @@ public class Continue extends Boton
     {
         checkMouse();
         if (Greenfoot.mouseClicked(this)){
-             clickSound();    
-             Greenfoot.start();
+             clickSound();
+             borrarMenuPause();
         }
-    }    
+    }
+    public void borrarMenuPause(){    
+        MenuPausa menuPausa = MenuPausa.getMenuPausa();
+        World detect;
+        detect = getWorld();
+             
+        detect.removeObject(menuPausa.getPause());
+        detect.removeObject(menuPausa.getContinue());
+        detect.removeObject(menuPausa.getOption());
+        detect.removeObject(menuPausa.getSaveGame());
+        detect.removeObject(menuPausa.getExit());
+        
+    }
 }

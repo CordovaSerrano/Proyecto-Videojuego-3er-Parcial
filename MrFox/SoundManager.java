@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class SoundManager{
     private static SoundManager soundManager;
     
-    public GreenfootSound intro = new GreenfootSound("Intro.mp3"); // Musica para la intro
+    private GreenfootSound intro = new GreenfootSound("Intro.mp3"); // Musica para la intro
     private GreenfootSound musicM1 = new GreenfootSound("Mision1.mp3");  //Musica para la mision1
     
     private SoundManager(){

@@ -21,10 +21,12 @@ public class Boton extends Actor
         
         if(Greenfoot.mouseMoved(null)){
             mouseOver = Greenfoot.mouseMoved(this);
+            
         }
         
         if(mouseOver){
           adjustTransparency(MAX_TRANS/3);
+  
         }
         else{
             adjustTransparency(255);

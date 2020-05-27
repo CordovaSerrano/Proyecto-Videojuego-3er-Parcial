@@ -1,18 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Pause here.
+ * Write a description of class YouLose here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Pause extends Boton
+public class YouLose extends Boton
 {
-    public Pause(){
-     
-    }
     /**
-     * Act - do whatever the Pause wants to do. This method is called whenever
+     * Act - do whatever the YouLose wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

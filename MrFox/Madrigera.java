@@ -18,7 +18,7 @@ public class Madrigera extends Entorno
     public void MadrigeraAtacada(){
         Actor Zorro;
         Zorro = getOneObjectAtOffset(0,0,Zorro.class);
-        if(Zorro != null && Greenfoot.isKeyDown("Q") && conejosEnMadrigera){
+        if(Zorro != null && Greenfoot.isKeyDown("L") && conejosEnMadrigera){
             Conejo conejo = new Conejo();
             conejosEnMadrigera=false;
             getWorld().addObject(conejo,getX(),getY());

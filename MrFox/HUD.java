@@ -14,17 +14,16 @@ public class HUD extends Actor
      * Act - do whatever the HUD wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public HUD(int vida,int comida){
-        this.vida = vida;
-        this.comida = comida;
+    public HUD(){
+
     }
     public void act() 
     {
-        // Add your action code here.
         
     }
     
-    public void hudStatus(){
-        
+    public void hudStatus(int comida, int vida){
+        setImage("HUD/HUD"+comida+"-"+vida+".png");
+        System.out.println("HUD"+comida+"-"+vida);
     }
 }

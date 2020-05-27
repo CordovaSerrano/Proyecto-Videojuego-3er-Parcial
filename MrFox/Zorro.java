@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.io.*;
 /**
  * Write a description of class Zorro here.
  * 
@@ -14,7 +14,8 @@ public class Zorro extends Actor{
     private int velocity = 9;
     private String key;
     private FrameContainer frameContainer;
-
+    private int vida;
+    private int comida;
     private Arbusto arbusto;
     
     public Zorro(){
@@ -71,8 +72,8 @@ public class Zorro extends Actor{
     }
     
     public boolean zorroEscondido(){
-        //Actor arbusto = getOneObjectAtOffset(Arbusto.class);
-        if(arbusto != null && Greenfoot.isKeyDown("J")){
+        Actor arbustoColision = getOneIntersectingObject(Arbusto.class);
+        if(arbustoColision != null &&  Greenfoot.isKeyDown("J")){
             return true;
         }else{
             return false;
@@ -90,7 +91,49 @@ public class Zorro extends Actor{
             detect.removeObject(Conejo);
         }
     }
+    public boolean zorroAtacado(){
+        boolean bandera = false;
+        Actor Perro;
+        Perro = getOneObjectAtOffset(0,0,Perro.class);
+        if(Perro != null){
+            World detect;
+            detect = getWorld();
+            detect.removeObject(Perro);
+            bandera = true;
+        }
+        return bandera;
+    }
+    public boolean isOver(){
+        boolean bandera = false;
+        if(getVida() == 0){
+            bandera = true;
+        }
+        return bandera;
+    }
+    public void setVida(int vida){
+        this.vida = vida;
+        System.out.println("Vida del Zorro: "+vida);
+    }
     
+    public void setComida(int comida){
+        this.comida = comida;
+        System.out.println("Comida del Zorro: "+comida);
+    }
+    
+    public int getVida(){
+        return vida;
+    }
+    
+    public int getComida(int comida){
+        Actor Perro;
+        Perro = getOneObjectAtOffset(0,0,Perro.class);
+        if(Perro != null){
+            World detect;
+            detect = getWorld();
+            detect.removeObject(Perro);
+        }
+        return comida;
+    }
    public boolean canMoveLeft(){
        boolean canMove =  true;
        
@@ -102,7 +145,8 @@ public class Zorro extends Actor{
           canMove = false;
           
        return canMove;
-    }
+   }
+    
    public boolean canMoveRight(){
        boolean canMove =  true;
        
@@ -131,6 +175,7 @@ public class Zorro extends Actor{
           
        return canMove;
    }
+   
    public boolean canMoveBot(){
       boolean canMove = true;
        Arbol arbol;
