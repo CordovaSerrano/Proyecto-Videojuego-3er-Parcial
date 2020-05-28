@@ -19,7 +19,7 @@ public class BotonNew extends Boton
         
         if (Greenfoot.mouseClicked(this)){
              clickSound();   
-             Greenfoot.setWorld(new NewGame());
+             Greenfoot.setWorld(new Instruccion1());
         } 
     }    
 }

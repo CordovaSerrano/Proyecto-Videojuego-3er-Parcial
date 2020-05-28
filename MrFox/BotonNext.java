@@ -20,7 +20,7 @@ public class BotonNext extends Boton
         
         if (Greenfoot.mouseClicked(this)){
              clickSound();   
-             Greenfoot.setWorld(new Mision1());
-        } 
+             Greenfoot.setWorld(new Difficulty());
+        }
     }
 }

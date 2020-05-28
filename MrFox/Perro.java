@@ -10,8 +10,8 @@ public class Perro extends Personaje
     //private int DireccionX=1;
     
     private Zorro Zorro;
-    public Perro(){
-        super(5);
+    public Perro(int velocidad){
+        super(velocidad);
         frameContainer = new FrameContainer();
         Zorro = new Zorro();
     }

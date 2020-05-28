@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=HUDstart
-comment1.params=
-comment1.target=HUDstart()
-comment2.params=vida\ comida
-comment2.target=int\ calculoCarneYVida(int,\ int)
-numComments=3

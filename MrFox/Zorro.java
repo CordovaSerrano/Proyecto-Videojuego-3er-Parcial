@@ -74,13 +74,14 @@ public class Zorro extends Actor{
     public boolean zorroEscondido(){
         Actor arbustoColision = getOneIntersectingObject(Arbusto.class);
         if(arbustoColision != null &&  Greenfoot.isKeyDown("J")){
+            System.out.println("Zorro Escondido");
             return true;
         }else{
             return false;
         }
         //return true;
     }
-    
+ 
     public void cazar(){
         Actor Conejo;
         Conejo = getOneObjectAtOffset(0,0,Conejo.class);

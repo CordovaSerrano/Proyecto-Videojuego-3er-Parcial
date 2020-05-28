@@ -12,21 +12,31 @@ public class Mision1 extends Misiones{
     protected GreenfootSound clickSound = new GreenfootSound("ClickSound.mp3");
     private int vida = 3;
     private int comida = 0;
+    private int velPerro;
+    private int noPerros;
     //Creacion de Personajes//
     Zorro zorro = new Zorro();
     Gallina gallina = new Gallina();
-    Perro perro = new Perro();
+    Perro perro1 = new Perro(velPerro);
+    Perro perro2 = new Perro(velPerro);
+    Perro perro3 = new Perro(velPerro);
+    Perro perro4 = new Perro(velPerro);
     //Creacion de Entorno//
     Madrigera m1 = new Madrigera();
-    Arbusto a1 = new Arbusto();
+
     //Creacion del HUD//
     HUD hud = new HUD();
     /**
      * Constructor for objects of class Mision1.
      * 
      */
-    public Mision1()
+    public Mision1(int dificultad,int noPerros,int noArbustos,int velPerro)
     {   
+        this.velPerro = velPerro;
+        this.noPerros = noPerros;
+        
+        spawnBushes(noArbustos);
+        spawnDogs(noPerros,velPerro);
         prepare();
     }
     
@@ -39,15 +49,15 @@ public class Mision1 extends Misiones{
         zorro.setVida(vida);
         zorro.setComida(comida);
         addObject(gallina,300,500);
-        addObject(perro,0,200);
         addObject(m1,200,510);
-        addObject(a1,200,600);
         spawnTrees();
         hud.hudStatus(vida,comida);
         addObject(hud,520,750);
     }
     
     public void act(){
+        Actor Perro;
+        
         if(Greenfoot.isKeyDown("P")){
             clickSound.play();
             menuPause();
@@ -56,14 +66,14 @@ public class Mision1 extends Misiones{
         if(zorro.zorroAtacado()){
             if(vida == 0){
             }else{
-            addObject(perro,0,200);
+            spawnDogs(noPerros,velPerro);        
             vida = vida - 1;
             zorro.setVida(vida);
             hud.hudStatus(vida,comida);
             }
         }
         if(vida == 0){
-             removeObject(perro);
+
             }
         if(zorro.isOver()){
             youLose();
@@ -81,6 +91,24 @@ public class Mision1 extends Misiones{
        
     }
     
+    public void spawnBushes(int noArbustos){
+        int x[]= {853,750,398,242,487,230};
+        int y[]= {603,212,632,159,112,436};
+        
+        for(int i=0; i<noArbustos;i++){
+            addObject(new Arbusto(),x[i],y[i]);
+        }
+       
+    }
+    
+    public void spawnDogs(int noPerros,int velPerro){
+        int x[]= {5,167,971,542};
+        int y[]= {179,772,782,16};
+        
+        for(int i=0; i<noPerros;i++){
+            addObject(new Perro(velPerro),x[i],y[i]);
+        }
+    }
     public void menuPause(){    
         MenuPausa menuPausa = MenuPausa.getMenuPausa();
             
