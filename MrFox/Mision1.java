@@ -14,6 +14,7 @@ public class Mision1 extends Misiones{
     private int comida = 0;
     private int velPerro;
     private int noPerros;
+    private int dificultad; //1 = Easy, 2 = Medium, 3 = Hard//
     //Creacion de Personajes//
     Zorro zorro = new Zorro();
     Gallina gallina = new Gallina();
@@ -23,7 +24,7 @@ public class Mision1 extends Misiones{
     Perro perro4 = new Perro(velPerro);
     //Creacion de Entorno//
     Madrigera m1 = new Madrigera();
-
+    Madrigera m2 = new Madrigera();
     //Creacion del HUD//
     HUD hud = new HUD();
     /**
@@ -34,7 +35,7 @@ public class Mision1 extends Misiones{
     {   
         this.velPerro = velPerro;
         this.noPerros = noPerros;
-        
+        this.dificultad = dificultad;
         spawnBushes(noArbustos);
         spawnDogs(noPerros,velPerro);
         prepare();
@@ -45,11 +46,12 @@ public class Mision1 extends Misiones{
         sound.stopIntro();
         sound.playMusicM1();
         //Personajes agregados a Mision1//
-        addObject(zorro,500,510);
+        addObject(zorro,710,427);
         zorro.setVida(vida);
         zorro.setComida(comida);
         addObject(gallina,300,500);
-        addObject(m1,200,510);
+        addObject(m1,540,38);
+        addObject(m2,657,646);
         spawnTrees();
         hud.hudStatus(vida,comida);
         addObject(hud,520,750);
@@ -64,6 +66,7 @@ public class Mision1 extends Misiones{
         }
         
         if(zorro.zorroAtacado()){
+            deleteDogs();
             if(vida == 0){
             }else{
             spawnDogs(noPerros,velPerro);        
@@ -72,9 +75,6 @@ public class Mision1 extends Misiones{
             hud.hudStatus(vida,comida);
             }
         }
-        if(vida == 0){
-
-            }
         if(zorro.isOver()){
             youLose();
         }
@@ -82,18 +82,18 @@ public class Mision1 extends Misiones{
    
     public void spawnTrees(){
         //Coordenadas de los arboles
-        int x[]= {35,140,820,552,262,490,950,880,562,54,64,430};
-        int y[]= {50,300,400,618,658,526,270,95,232,570,742,481};
+        int x[]= {985,931,817,520,277,107,351,244};
+        int y[]= {446,357,696,344,660,669,31,3};
       
-        for(int i=0; i<12;i++){
+        for(int i=0; i<8;i++){
             addObject(new Arbol(),x[i],y[i]);
         }
        
     }
     
     public void spawnBushes(int noArbustos){
-        int x[]= {853,750,398,242,487,230};
-        int y[]= {603,212,632,159,112,436};
+        int x[]= {946,864,867,520,288,98};
+        int y[]= {760,481,74,511,137,504};
         
         for(int i=0; i<noArbustos;i++){
             addObject(new Arbusto(),x[i],y[i]);
@@ -108,6 +108,11 @@ public class Mision1 extends Misiones{
         for(int i=0; i<noPerros;i++){
             addObject(new Perro(velPerro),x[i],y[i]);
         }
+    }
+    public void deleteDogs(){
+        List remove = getObjects( Perro.class );
+        for (Object objects : remove)
+        removeObject( ( Perro ) objects );
     }
     public void menuPause(){    
         MenuPausa menuPausa = MenuPausa.getMenuPausa();

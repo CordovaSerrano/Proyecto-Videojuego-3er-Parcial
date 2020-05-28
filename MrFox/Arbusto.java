@@ -19,7 +19,6 @@ public class Arbusto extends Entorno
     public boolean zorroEnArbusto(){
         Actor zorroColision = getOneIntersectingObject(Zorro.class);
         if(zorroColision != null){
-            System.out.println("Zorro en Arbusto");
             adjustTransparency(255/3);
             return true;
         }else{

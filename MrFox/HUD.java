@@ -24,6 +24,5 @@ public class HUD extends Actor
     
     public void hudStatus(int comida, int vida){
         setImage("HUD/HUD"+comida+"-"+vida+".png");
-        System.out.println("HUD"+comida+"-"+vida);
     }
 }
