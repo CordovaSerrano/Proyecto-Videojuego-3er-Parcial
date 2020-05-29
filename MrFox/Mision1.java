@@ -9,40 +9,43 @@ import java.util.*;
  * @version (a version number or a date)
  */
 public class Mision1 extends Misiones{
-    protected GreenfootSound clickSound = new GreenfootSound("ClickSound.mp3");
+
     private int vida = 3;
     private int comida = 0;
+    private int mision = 1;
     private int velPerro;
     private int noPerros;
     private int dificultad; //1 = Easy, 2 = Medium, 3 = Hard//
+    private int noArbustos;
     //Creacion de Personajes//
     Zorro zorro = new Zorro();
     Gallina gallina = new Gallina();
-    Perro perro1 = new Perro(velPerro);
-    Perro perro2 = new Perro(velPerro);
-    Perro perro3 = new Perro(velPerro);
-    Perro perro4 = new Perro(velPerro);
     //Creacion de Entorno//
     Madrigera m1 = new Madrigera();
     Madrigera m2 = new Madrigera();
     //Creacion del HUD//
     HUD hud = new HUD();
+    //Timer//
+ 
+    //Sonido//
+    SoundManager sound = SoundManager.getSoundManager();
     /**
      * Constructor for objects of class Mision1.
      * 
      */
     public Mision1(int dificultad,int noPerros,int noArbustos,int velPerro)
     {   
-        this.velPerro = velPerro;
-        this.noPerros = noPerros;
         this.dificultad = dificultad;
+        this.noPerros = noPerros;
+        this.noArbustos = noArbustos;
+        this.velPerro = velPerro;
         spawnBushes(noArbustos);
         spawnDogs(noPerros,velPerro);
         prepare();
     }
     
     private void prepare(){
-        SoundManager sound = SoundManager.getSoundManager();
+        
         sound.stopIntro();
         sound.playMusicM1();
         //Personajes agregados a Mision1//
@@ -56,10 +59,8 @@ public class Mision1 extends Misiones{
         hud.hudStatus(vida,comida);
         addObject(hud,520,750);
     }
-    
+
     public void act(){
-        Actor Perro;
-        
         if(Greenfoot.isKeyDown("P")){
             clickSound.play();
             menuPause();
@@ -75,11 +76,33 @@ public class Mision1 extends Misiones{
             hud.hudStatus(vida,comida);
             }
         }
+        
         if(zorro.isOver()){
             youLose();
+            deleteDogs();
+            sound.stopMusicM1();
+        }
+        
+        if(zorro.cazar()){
+            comida = comida + 1;
+            zorro.setComida(comida);
+            hud.hudStatus(vida,comida);
+        }
+        if(comida == 1){
+        missionComplete();
         }
     }
-   
+    public void missionComplete(){
+        MissionComplete complete = MissionComplete.getMissionComplete();
+        SaveGame saveGame = SaveGame.getSaveGame(vida,comida,mision,dificultad,noPerros,noArbustos,velPerro);
+        NextLevelM2 level2 = NextLevelM2.getNextLevelM2(dificultad,noPerros,noArbustos,velPerro,comida,vida);
+        
+        addObject(complete,500,400);
+        addObject(saveGame,320,450);
+        addObject(level2,700,450);
+        deleteDogs();
+    
+    }
     public void spawnTrees(){
         //Coordenadas de los arboles
         int x[]= {985,931,817,520,277,107,351,244};
@@ -109,27 +132,13 @@ public class Mision1 extends Misiones{
             addObject(new Perro(velPerro),x[i],y[i]);
         }
     }
-    public void deleteDogs(){
-        List remove = getObjects( Perro.class );
-        for (Object objects : remove)
-        removeObject( ( Perro ) objects );
-    }
-    public void menuPause(){    
-        MenuPausa menuPausa = MenuPausa.getMenuPausa();
-            
-        addObject(menuPausa.getPause(),530,400);
-        addObject(menuPausa.getContinue(),530,290);
-        addObject(menuPausa.getOption(),530,360);
-        addObject(menuPausa.getSaveGame(),530,430);
-        addObject(menuPausa.getExit(),530,500);        
-    }
-    
+   
     public void youLose(){    
         Lose youLose = Lose.getLose();
             
         addObject(youLose.getYouLose(),530,400);
         addObject(youLose.getExit(),435,455);
-        addObject(youLose.getTryAgain(),620,455);
+        addObject(youLose.getTryAgainM1(dificultad,noPerros,noArbustos,velPerro),620,455);
     }
 }
 

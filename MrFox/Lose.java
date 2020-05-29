@@ -11,7 +11,9 @@ public class Lose
     private static Lose lose;
     private static YouLose youLose;
     private static Exit exit;
-    private static TryAgain tryAgain;
+    private static TryAgainM1 tryAgainM1;
+    private static TryAgainM2 tryAgainM2;
+    private static TryAgainM3 tryAgainM3;
     
     private Lose(){
         
@@ -38,10 +40,24 @@ public class Lose
         return exit;
     }
     
-    public TryAgain getTryAgain(){
-        if(tryAgain == null){
-            tryAgain = new TryAgain();
+    public TryAgainM1 getTryAgainM1(int dificultad,int noPerros,int noArbustos,int velPerro){
+        if(tryAgainM1 == null){
+            tryAgainM1 = new TryAgainM1( dificultad, noPerros, noArbustos, velPerro);
         }
-        return tryAgain;
+        return tryAgainM1;
+    }
+    
+    public TryAgainM2 getTryAgainM2(int dificultad,int noPerros,int noArbustos,int velPerro,int comida,int vida){
+        if(tryAgainM2 == null){
+            tryAgainM2 = new TryAgainM2( dificultad, noPerros, noArbustos, velPerro,comida,vida);
+        }
+        return tryAgainM2;
+    }
+    
+    public TryAgainM3 getTryAgainM3(int dificultad,int noPerros,int noArbustos,int velPerro,int comida,int vida){
+        if(tryAgainM3 == null){
+            tryAgainM3 = new TryAgainM3( dificultad, noPerros, noArbustos, velPerro,comida,vida);
+        }
+        return tryAgainM3;
     }
 }

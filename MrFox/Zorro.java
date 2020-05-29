@@ -78,18 +78,20 @@ public class Zorro extends Actor{
         }else{
             return false;
         }
-        //return true;
     }
  
-    public void cazar(){
-        Actor Conejo;
-        Conejo = getOneObjectAtOffset(0,0,Conejo.class);
+    public boolean cazar(){
+        boolean bandera = false;
+        Actor Gallina;
+        Gallina = getOneObjectAtOffset(0,0,Gallina.class);
 
-        if(Conejo != null && Greenfoot.isKeyDown("K")){
+        if(Gallina != null && Greenfoot.isKeyDown("K")){
             World detect;
             detect = getWorld();
-            detect.removeObject(Conejo);
+            detect.removeObject(Gallina);
+            bandera = true;
         }
+        return bandera;
     }
     public boolean zorroAtacado(){
         boolean bandera = false;

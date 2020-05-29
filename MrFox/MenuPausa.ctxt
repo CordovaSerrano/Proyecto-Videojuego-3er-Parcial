@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=MenuPausa
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ MenuPausa\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=MenuPausa()
+comment1.params=vida\ comida\ mision\ dificultad\ noPerros\ noArbustos\ velPerro
+comment1.target=MenuPausa(int,\ int,\ int,\ int,\ int,\ int,\ int)
 comment2.params=
 comment2.target=MenuPausa\ getMenuPausa()
 comment3.params=

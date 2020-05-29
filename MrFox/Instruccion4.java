@@ -15,6 +15,6 @@ public class Instruccion4 extends Instrucciones
      */
     public Instruccion4()
     {
-        addObject(new BotonNext(),900,730);
+        addObject(new Skip(),900,730);
     }
 }

@@ -31,7 +31,7 @@ public class Gallina extends Personaje
         y = getY();
 
         /*---IA---*/
-        moverseEnDireccionesAleatorias(5);
+        moverseEnDireccionesAleatorias(10);
 
         /*--- Controles de frameStill ---*/
         if(key==null){

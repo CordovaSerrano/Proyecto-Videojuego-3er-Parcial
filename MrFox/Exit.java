@@ -8,7 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Exit extends Boton
 {
+    private static Exit exit;
     private SoundManager sound = SoundManager.getSoundManager();
+    
+    public Exit(){
+        
+    }
+    public static Exit getExit(){
+        if(exit == null){
+            exit = new Exit();
+        }
+        return exit;
+    }
     /**
      * Act - do whatever the Exit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

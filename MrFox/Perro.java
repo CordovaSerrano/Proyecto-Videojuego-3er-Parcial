@@ -35,8 +35,20 @@ public class Perro extends Personaje
         
         if(((Zorro)zorro).zorroEscondido()==true){
             moverseEnDireccionesAleatorias(15);
-        }else{
-            persegirZorro(xZorro, x, yZorro, y);
+            
+            //Variables para rastrear al Conejo
+            if(getWorld().getObjects(Conejo.class).size() != 0){
+                Actor conejo = getWorld().getObjects(Conejo.class).get(0);
+                int xConejo = conejo.getX();
+                int yConejo = conejo.getY();
+                if(conejo != null){
+                    persegirPresa(xConejo, x, yConejo, y);
+                }
+            }
+            //
+        }    
+        else{
+            persegirPresa(xZorro, x, yZorro, y);
         }
         
         /*--- Controles de frameStill ---*/
@@ -57,8 +69,8 @@ public class Perro extends Personaje
         }
     }
     
-    public void persegirZorro(int xZorro, int x, int yZorro, int y){
-        if(xZorro<x){
+    public void persegirPresa(int xPresa, int x, int yPresa, int y){
+        if(xPresa<x){
             this.x = x - velocity;
             DireccionX= -1;
         }
@@ -66,7 +78,7 @@ public class Perro extends Personaje
             this.x = x + velocity;
             DireccionX= 1;
         }
-        if(yZorro<y){
+        if(yPresa<y){
             this.y = y - velocity;
         }
         else{
