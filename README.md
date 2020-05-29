@@ -18,3 +18,6 @@ Sr Fox esta destinado a jugadores de todas las edades interesadas en los videoju
 ## Video Demostracion 
 
 https://www.youtube.com/watch?v=te95YjOm-xo
+
+## Diagrama de clases 
+![Diagrama de clases](diagramaDeClases.jpg)
